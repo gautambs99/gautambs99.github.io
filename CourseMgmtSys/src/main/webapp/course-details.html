@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Prerequisite Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script defer src="course-details.js"></script>
+    <style>
+        /* ✅ General Styles */
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ✅ Page Wrapper */
+        .container {
+            width: 70%;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        /* ✅ Top Navigation Bar */
+        .top-bar {
+            background: #800000;
+            color: white;
+            padding: 15px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* ✅ Return Button */
+        .return-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-block;
+            padding: 10px 15px;
+            background: #800000;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+
+        .return-btn:hover {
+            background: #600000;
+            transform: scale(1.05);
+        }
+
+        /* ✅ Page Title */
+        h1 {
+            color: #800000;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* ✅ Course Details Section */
+        .course-details {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .course-details strong {
+            font-weight: bold;
+            color: #222;
+        }
+
+        /* ✅ Graph Container */
+        #graph-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .node text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .node circle {
+            fill: lightblue;
+            stroke: black;
+            stroke-width: 1.5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ✅ Top Bar with Title -->
+<div class="top-bar">Course Information</div>
+
+<!-- ✅ Return Button -->
+<a href="#" id="return-to-search" class="return-btn">← Return to Search</a>
+
+<!-- ✅ Page Container -->
+<div class="container">
+    <h1>Course Prerequisite Visualization</h1>
+
+    <div class="course-details">
+        <p><strong>Course ID:</strong> <span id="course-id"></span></p>
+        <p><strong>Course Name:</strong> <span id="course-name"></span></p>
+    </div>
+
+    <h2 style="text-align: center; color: #222;">Prerequisite Graph</h2>
+    <div id="graph-container"></div>
+</div>
+
+</body>
+</html>

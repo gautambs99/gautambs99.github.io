@@ -1,0 +1,366 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Change the Outer Background Color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0; /* Light gray background */
+    color: #333;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Top Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+}
+
+.faculty-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.faculty-info h1 {
+    font-size: 1.8rem;
+    color: red;
+}
+
+.university-logo {
+    width: 70px;
+    height: auto;
+}
+
+/* Top Navigation */
+.navigation {
+    background-color: #800000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.navigation ul li {
+    margin: 0 20px;
+}
+
+.navigation ul li a {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.navigation ul li a.active {
+    border-bottom: 3px solid white;
+    font-weight: bold;
+    color: yellow;
+}
+
+/* Main Layout (Fixing Alignment) */
+.layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 30px auto; /* Adds spacing around content */
+    padding: 20px;
+    background-color: #f5f5f5; /* Light inner background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Sidebar */
+.sidebar {
+    background-color: #900; /* Highlighted red */
+    color: white;
+    padding: 20px;
+    width: 250px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #b30000;
+}
+
+/* Main Content */
+.main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+    margin: 0 20px;
+    min-width: 600px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    background-color: #900; /* Highlighted red */
+    color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.right-sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.right-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.right-sidebar ul li {
+    margin: 10px 0;
+}
+
+.right-sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.right-sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Book Highlight */
+.book-highlight {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #b30000; /* Slightly darker red */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.book-highlight img {
+    width: 100px;
+    border-radius: 5px;
+}
+
+.book-highlight p {
+    font-size: 1rem;
+    color: #fff;
+}
+/* Advising Section Styling */
+.advising-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.advising-section h2 {
+    font-size: 1.5rem;
+    color: #900;
+    margin-bottom: 10px;
+}
+
+/* Student Search Styling */
+#student-search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#student-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#student-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Scheduled Appointments Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #900;
+    color: white;
+}
+
+/* Faculty Availability */
+#faculty-availability {
+    list-style: none;
+    padding: 0;
+}
+
+#faculty-availability li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+/* Footer Styling */
+footer {
+    background-color: #900;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Push footer to the bottom */
+    width: 100%;
+}
+/* Faculty Home Page Sections */
+.faculty-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.faculty-section h2 {
+    font-size: 1.5rem;
+    color: #900;
+    margin-bottom: 10px;
+}
+
+/* Course List */
+.faculty-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.faculty-section ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Table Styling for Appointments */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #900;
+    color: white;
+}
+
+/* Links */
+.faculty-section a {
+    color: #900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.faculty-section a:hover {
+    text-decoration: underline;
+}
+/* Profile Dropdown Styling */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: white;
+    width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown when active */
+.dropdown-menu.show {
+    display: block;
+}

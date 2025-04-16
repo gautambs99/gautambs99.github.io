@@ -1,0 +1,148 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #d3d3d3, #f5f5f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    width: 750px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Left Panel (Welcome Section) */
+.left-panel {
+    width: 40%;
+    background: #007bff;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: inset 0px 0px 8px rgba(255, 255, 255, 0.2); /* Soft glow effect */
+}
+
+.left-panel h1 {
+    font-size: 22px;
+    font-weight:bold;
+    margin-bottom: 10px;
+}
+
+.left-panel p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.left-panel i {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+/* Right Panel (Login Section) */
+.right-panel {
+    width: 60%;
+    padding: 40px;
+    text-align: center;
+}
+
+.right-panel h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.right-panel h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Forgot Password */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+}
+
+/* Info Message */
+.info-message {
+    font-size: 14px;
+    margin-top: 10px;
+    color: gray;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .left-panel {
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .right-panel {
+        width: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Panel</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+<!-- Wrap everything inside a container -->
+<div class="container">
+    <header class="header">
+        <div class="header-left">
+            <img src="img.png" alt="Student Photo" class="student-photo">
+            <div class="student-info">
+                <H1> <span id="user-name">Loading...</span></H1>
+
+            </div>
+        </div>
+        <!--<div class="header-right">
+             <img src="img_1.png" alt="University Logo" class="university-logo">-->
+
+        <!-- Profile Dropdown -->
+        <div class="profile-dropdown">
+            <img src="img_2.png" alt="User Icon" class="user-icon" id="profile-icon">
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="#" class="tab-link" data-page="student-about">View Profile</a>
+                <a href="#" id="logout">Logout</a>
+            </div>
+        </div>
+    </header>
+    <!-- Navigation -->
+    <nav class="sidebar navigation">
+        <ul>
+            <li><a href="#" class="tab-link active" data-page="student-dashboard">Home</a></li>
+            <li><a href="#" class="tab-link" data-page="student-about">My Profile</a></li>
+            <li><a href="#" class="tab-link" data-page="student-my-courses">My Courses</a></li>
+            <li><a href="#" class="tab-link" data-page="student-course-search">Course Search</a></li>
+            <li><a href="#" class="tab-link" data-page="student-advising-tab">Advising</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Main content starts here -->
+    <main class="main-content">
+        <div id="student-dashboard" class="page">
+            <div class="welcome-section">
+                <h1>👋 Welcome to the Student Dashboard!</h1>
+                <p>Stay updated with the latest announcements and manage your courses efficiently.</p>
+            </div>
+            <div id="bulletin-board" class="bulletin">
+                <h2>📌 Bulletin Board</h2>
+                <div class="bulletin-container">
+                    <div class="bulletin-item urgent">
+                        <span class="bulletin-icon">🚨</span>
+                        <p><strong>Exam Deadline:</strong> Final exams schedule released. <a href="#">Check Here</a></p>
+                    </div>
+                    <div class="bulletin-item info">
+                        <span class="bulletin-icon">📅</span>
+                        <p><strong>New Semester:</strong> Starts on <strong>March 10th</strong>.</p>
+                    </div>
+                    <div class="bulletin-item warning">
+                        <span class="bulletin-icon">📝</span>
+                        <p><strong>Registration:</strong> Closes on <strong>March 5th</strong>.</p>
+                    </div>
+                    <div class="bulletin-item success">
+                        <span class="bulletin-icon">🎓</span>
+                        <p><strong>Faculty Meeting:</strong> March 7th at 10 AM.</p>
+                    </div>
+                    <div class="bulletin-item highlight">
+                        <span class="bulletin-icon">💡</span>
+                        <p><strong>Workshop:</strong> "AI in Education" - <a href="#">Register Now!</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="student-about" class="page" style="display: none;">
+            <h1>My Profile</h1>
+            <div class="profile-info">
+                <p><strong>Name:</strong> <span id="profile-name">Loading...</span></p>
+                <p><strong>Department:</strong> <span id="profile-department">Loading...</span></p>
+                <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+                <p><strong>Student ID:</strong> <span id="profile-id">Loading...</span></p>
+                <p><strong>Advisor:</strong> <span id="profile-advisor">Loading...</span></p> <!-- Added advisor name -->
+
+
+            </div>
+        </div>
+
+        <div id="student-my-courses" class="page" style="display: none;">
+            <h1>📚 My Courses</h1>
+
+
+            <!-- Course Table -->
+            <table class="course-table">
+                <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody id="course-list">
+                <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="student-course-search" class="page" style="display: none;">
+            <h1>Course Search</h1>
+            <div class="search-box">
+                <input type="text" id="course-search-input" placeholder="Search for courses...">
+                <button id="search-button">Search</button>
+
+            </div>
+            <ul id="courses"></ul>
+
+        </div>
+        <div id="course-details" class="page" style="display: none;">
+            <h2>Course Details</h2>
+            <div id="course-info"></div>
+        </div>
+
+        <div id="student-advising-tab" class="page" style="display: none;">
+            <!-- Unified Advisor & Appointment Section -->
+            <h2>📚 Advisor Information</h2>
+            <div class="advisor-container">
+
+                <!-- Advisor Card -->
+                <div class="advisor-card">
+                    <div class="advisor-header">
+                    </div>
+                    <div class="advisor-details">
+                        <div class="advisor-info">
+                            <p><strong>Name:</strong> <span id="advisor-name">Loading...</span></p>
+                            <p><strong>Department:</strong> <span id="advisor-department">Loading...</span></p>
+
+                            <p><strong>Courses:</strong> <span id="advisor-courses">Loading...</span></p>
+                            <p><strong>Office Hours:</strong> <span id="advisor-office">Loading...</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointment Section -->
+                <div class="appointment-card">
+                    <h2>📅 Schedule an Appointment</h2>
+                    <input type="datetime-local" id="appointment-datetime">
+                    <button id="book-appointment">Book Now</button>
+                    <p class="appointment-message"></p>
+                </div>
+
+            </div>
+
+            <!-- Upcoming Appointments -->
+            <div class="upcoming-meetings">
+                <h2>🔔 Upcoming Appointments</h2>
+                <ul id="student-appointments"></ul>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- Chatbot icon and window -->
+    <!-- CHANGES START HERE -->
+    <div id="chat-icon">💬</div> <!-- Moved this out of the footer, now positioned using CSS -->
+
+    <!-- Chatbot Window, now positioned at the bottom-right of the page -->
+    <div id="chat-window">
+        <div id="chat-header">
+            <span>Chatbot</span>
+            <span id="close-chat">✖</span>
+        </div>
+        <div id="chat-body"></div>
+        <div id="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <!-- CHANGES END HERE -->
+    <!-- Advising FAQs -->
+    <div class="faqs">
+        <h2>❓ FAQs</h2>
+        <ul>
+            <li><strong>How do I drop a course?</strong> Check with your advisor during office hours.</li>
+            <li><strong>What if I miss an appointment?</strong> Contact your advisor to reschedule.</li>
+            <li><strong>How do I check my degree progress?</strong> Refer to your course dashboard.</li>
+        </ul>
+    </div>
+    <!-- Footer starts here -->
+    <footer>
+        <p>© 2025 Course Management Portal</p>
+    </footer>
+    <!-- Footer is no longer inside a fixed position, it will be placed at the bottom naturally -->
+</div>
+<script src="dashboard.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

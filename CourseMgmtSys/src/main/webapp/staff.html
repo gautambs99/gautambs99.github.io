@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="container">
+    <!-- Staff Sidebar -->
+    <nav class="sidebar staff-sidebar">
+        <ul>
+            <li><a href="#" class="active" data-page="dashboard">🏠 Dashboard</a></li>
+            <li><a href="#" data-page="add-course">➕ Add Course</a></li>
+            <li><a href="#" data-page="edit-course">✏️ Edit Course</a></li>
+            <li><a href="#" id="logout">🚪 Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="dashboard-content staff-content">
+            <div class="page" id="staff-dashboard">
+                <h1>Staff Dashboard</h1>
+                <p>Welcome to the Staff Dashboard. Use the sidebar to navigate.</p>
+            </div>
+            <div class="page" id="staff-add-course" style="display: none;">
+                <h1>Add New Course</h1>
+                <form id="add-course-form">
+                    <div class="form-group">
+                        <label for="course-code">Course Code</label>
+                        <input type="text" id="course-code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-name">Course Name</label>
+                        <input type="text" id="course-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prerequisites">Prerequisites</label>
+                        <input type="text" id="prerequisites" placeholder="e.g., CS101, MATH201">
+                    </div>
+                    <div class="form-group">
+                        <label for="credits">Credits</label>
+                        <input type="number" id="credits" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Add Course</button>
+                </form>
+            </div>
+            <div class="page" id="staff-edit-course" style="display: none;">
+                <h1>Edit Courses</h1>
+                <div class="course-list">
+                    <div class="course-item">
+                        <h4>CS101 - Introduction to Programming</h4>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    <div class="course-item">
+                        <h4>CS202 - Data Structures</h4>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="dashboard.js"></script>
+</body>
+</html>

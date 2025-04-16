@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>External Institute Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <style>
+        body {
+            background-color: #F8F8F8;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-header {
+            background-color: #600000;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            background-color: white;
+            color: #600000;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #600000;
+            font-weight: bold;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .upload-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background-color: #D32F2F;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #B71C1C;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="main-header">
+    External Institute Dashboard
+    <div class="profile-icon" id="profile-icon">👤</div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="#" id="logout">Logout</a>
+    </div>
+</div>
+
+<div class="upload-container">
+    <h2 style="color: #009688;">Upload File</h2>
+    <form id="file-upload-form">
+        <div class="form-group">
+            <label for="file-upload">Select File</label>
+            <input type="file" id="file-upload" name="file-upload" required />
+        </div>
+        <div class="form-group">
+            <label for="file-description">File Description</label>
+            <textarea
+                    id="file-description"
+                    name="file-description"
+                    rows="3"
+                    placeholder="Enter a brief description of the file"
+            ></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Upload File</button>
+    </form>
+</div>
+
+<script>
+    // Profile menu toggle
+    document.getElementById("profile-icon").addEventListener("click", function (event) {
+        event.stopPropagation();
+        document.getElementById("dropdown-menu").classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (event) {
+        const menu = document.getElementById("dropdown-menu");
+        const icon = document.getElementById("profile-icon");
+        if (!menu.contains(event.target) && !icon.contains(event.target)) {
+            menu.classList.remove("show");
+        }
+    });
+
+    document.getElementById("logout").addEventListener("click", function () {
+        sessionStorage.clear();
+        window.location.href = "index.html";
+    });
+
+    // File upload using fetch + FormData
+    document.getElementById("file-upload-form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("UploadfileServlet", {
+                method: "POST",
+                body: formData
+            });
+
+            const resultText = await response.text();
+            alert(resultText);
+        } catch (error) {
+            alert("Upload failed: " + error.message);
+        }
+    });
+</script>
+</body>
+</html>

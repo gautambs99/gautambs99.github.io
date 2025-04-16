@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Panel</title>
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+<!-- Main container -->
+<div class="container">
+    <!-- Top Header -->
+    <header class="header">
+        <div class="header-left">
+            <img src="img.png" alt="Faculty Photo" class="faculty-photo">
+            <div class="faculty-info">
+                <h1 id="user-name">Loading...</h1>
+               <!-- <h1>Robert J. Sampson</h1>-->
+                <!--<p>Professor of Social Sciences</p>-->
+            </div>
+        </div>
+        <!--<div class="header-right">
+            <img src="img_1.png" alt="University Logo" class="university-logo">
+        </div>
+        Profile Dropdown Menu -->
+        <div class="profile-dropdown">
+            <img src="img_2.png" alt="User Icon" class="user-icon" id="profile-icon">
+            <div class="dropdown-menu" id="dropdown-menu">
+            <a href="#" class="tab-link" data-page="faculty-about">View Profile</a>
+            <a href="#" id="logout">Logout</a>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Top Navigation (Unchanged) -->
+    <nav class="navigation">
+        <ul>
+            <li><a href="#" class="tab-link active" data-page="faculty-dashboard">Home</a></li>
+            <li><a href="#" class="tab-link" data-page="faculty-about">My Profile</a></li>
+           <!-- <li><a href="#" class="tab-link" data-page="faculty-my-courses">My Courses</a></li>
+            <li><a href="#" class="tab-link" data-page="faculty-course-search">Course Search</a></li>-->
+            <li><a href="#" class="tab-link" data-page="faculty-advising-tab">Advising</a></li>
+           <!-- <li><a href="#" id="logout">Logout</a></li>!-->
+        </ul>
+    </nav>
+    <!-- Layout: Left Sidebar | Main Content | Right Sidebar -->
+    <div class="layout">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <h2></h2>
+            <ul>
+                <li><a href="https://ieeexplore.ieee.org/recentlypublished/periodicals">Publication</a></li>
+                <li><a href="https://trendingpapers.com/papers?o=pagerank_growth&pd=Since%20beginning&cc=Cited%20and%20uncited%20papers&c=All%20categories">Research</a></li>
+                <li><a href="https://www.everand.com/books">Books</a></li>
+                <li><a href="https://www.foxnews.com/?msockid=1d7a26e9299d668e03c3334d28cf67ca">Trending News</a></li>
+
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Faculty Home Page -->
+            <div id="faculty-dashboard" class="page">
+                <!--<h1>Welcome, Professor Robert J. Sampson</h1>
+                <p>Department of Social Sciences</p>-->
+
+                <!-- Upcoming Appointments -->
+                <div class="faculty-section">
+                    <h2>Upcoming Appointments</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>March 5, 2025</td>
+                            <td>10:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>March 6, 2025</td>
+                            <td>2:30 PM</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- Recent Publications -->
+                <div class="faculty-section">
+                    <ul><li><a href ="https://www.uhcl.edu/science-engineering/departments/computing-sciences/computer-science/research-publications"><h2>Recent Publications</h2></a></li></ul>
+                    <ul>
+                        <li><a href="research1.pdf" target="_blank">🔗 Open courseware and computer science education</a></li>
+                        <li><a href="research2.pdf" target="_blank">🔗 Functional Annotation and Analysis of Genetic Variants(2023)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Faculty Announcements -->
+                <div class="faculty-section">
+                    <h2>Faculty Announcements</h2>
+                    <p>📢 Faculty meeting scheduled for March 10, 2025, at 3:00 PM.</p>
+                    <p>📢 Deadline for research grant applications: April 1, 2025.</p>
+                </div>
+            </div>
+
+
+            <div id="faculty-about" class="page" style="display: none;">
+                <h1>My Profile</h1>
+                <div class="profile-info">
+                    <p><strong>Name:</strong> <span id="profile-name">Loading...</span></p>
+                    <p><strong>Department:</strong> <span id="profile-department">Loading...</span></p>
+                    <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+                    <p><strong>Faculty ID:</strong> <span id="profile-id">Loading...</span></p>
+                </div>
+            </div>
+            <!-- Advising Page -->
+            <div class="page" id="faculty-advising-tab" style="display: none;">
+                <h1>Advising</h1>
+
+                <!-- Student Search -->
+                <div class="advising-section">
+                    <!-- Faculty Availability -->
+                    <div class="advising-section">
+                        <h2>Faculty Availability</h2>
+                        <p>Select an available time slot for advising:</p>
+                        <ul id="faculty-availability">
+                            <li>Monday - 10:00 AM - 12:00 PM</li>
+                            <li>Tuesday - 2:00 PM - 4:00 PM</li>
+                            <li>Thursday - 9:00 AM - 11:00 AM</li>
+                        </ul>
+                    </div>
+
+                    <h2>Student Search</h2>
+                    <input type="text" id="student-search" placeholder="Search students by name or ID..." onkeyup="searchStudent()">
+                    <ul id="student-list">
+                        <li>John Doe - ID: 1001</li>
+                        <li>Jane Smith - ID: 1002</li>
+                        <li>Michael Johnson - ID: 1003</li>
+                        <li>Emily Davis - ID: 1004</li>
+                    </ul>
+                </div>
+
+                <!-- Scheduled Appointments -->
+                <div class="advising-section">
+                    <h2>Scheduled Appointments</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>March 5, 2025</td>
+                            <td>10:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>March 6, 2025</td>
+                            <td>2:30 PM</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <h2>Updates</h2>
+            <ul>
+                <li><a href="#">Current Research Projects</a></li>
+                <li><a href="#">Recent Articles & Publications</a></li>
+                <li><a href="#">Upcoming Conferences</a></li>
+            </ul>
+        </aside>
+    </div>
+</div>
+<footer>
+    <p>© 2025 Course Management Portal</p>
+</footer>
+<script src="dashboard.js"></script>
+</body>
+</html>
